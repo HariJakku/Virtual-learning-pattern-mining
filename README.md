@@ -91,7 +91,7 @@ Query results are visualized and stored as screenshots in the `query_outputs_scr
 
 ## 📄 Report
 
-Full project documentation is available in the [`/Report/DM_B9.pdf`](./Report/DM_B9.pdf) file.
+Full project documentation is available in the [`/DM_B9.pdf`](./DM_B9.pdf) file.
 
 ---
 
