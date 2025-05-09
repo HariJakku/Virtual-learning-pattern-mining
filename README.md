@@ -53,7 +53,12 @@ Collected via a structured Google Form, the dataset includes:
 
 ## 🔍 Technologies & Tools Used
 
-### 🔢 Machine Learning (Orange Tool)
+> Required Tools:
+> - Orange Tool (https://orangedatamining.com)
+> - SQL Server Management Studio
+> - Visual Studio with SSAS for OLAP operations
+
+### 🔢 Machine Learning 
 - Models: Naive Bayes, Random Forest, KNN, SVM, Neural Network
 - Metrics: Accuracy, Precision, Recall, F1-score, Confusion Matrix
 - Data balancing: SMOTE
