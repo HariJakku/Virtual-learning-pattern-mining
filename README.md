@@ -19,7 +19,7 @@ Data-Mining-Virtual-Learning/
 │   ├── star_schema_queries.mdx
 │   ├── snowflake_schema_queries.mdx
 │   ├── fact_constellation_queries.mdx
-│   └── query_outputs_screenshots
+│   └── query_outputs_screenshots.docx 
 │
 ├── Report/                         # Final project report
 │   └── DM_B9.pdf
