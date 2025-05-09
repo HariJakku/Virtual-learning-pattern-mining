@@ -19,18 +19,7 @@ Data-Mining-Virtual-Learning/
 │   ├── star_schema_queries.mdx
 │   ├── snowflake_schema_queries.mdx
 │   ├── fact_constellation_queries.mdx
-│   └── query_outputs_screenshots/
-│       ├── rollup_output.png
-│       ├── slice_output.png
-│       └── drilldown_output.png
-│
-├── ML_Models/                      # Classification scripts & results
-│   ├── naive_bayes_model.py
-│   ├── svm_model.py
-│   └── evaluation_metrics.csv
-│
-├── Visualizations/                 # Graphs, charts, confusion matrices
-│   └── charts_and_matrices/
+│   └── query_outputs_screenshots
 │
 ├── Report/                         # Final project report
 │   └── DM_B9.pdf
@@ -128,7 +117,7 @@ git clone https://github.com/your-username/Data-Mining-Virtual-Learning.git
 
 ## 🧑‍🏫 Guided By
 
-**Dr. N. Rajeswari**, Professor, Department of Computer Science and Engineering  
+**Dr. N. Rajeswari**, Professor & Mentor, Department of Computer Science and Engineering  
 *Seshadri Rao Gudlavalleru Engineering College*
 
 ## 📝 License
