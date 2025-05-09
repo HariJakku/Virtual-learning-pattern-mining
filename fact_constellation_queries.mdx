@@ -1,0 +1,48 @@
+//1. rollUp -Total Time Spent by Course
+SELECT 
+    [Measures].[Time Spent] ON COLUMNS,
+    [Dim Course].[Course Type].MEMBERS ON ROWS
+FROM [factconstellation]
+
+//2. Drill-Down with Condition: Time Spent Less than 300
+
+SELECT 
+    [Measures].[Time Spent] ON COLUMNS,
+    FILTER(
+        NONEMPTY(
+            CROSSJOIN([Dim Course].[Course Type].MEMBERS, [Dim Course].[Course ID].MEMBERS)
+        ),
+        [Measures].[Time Spent] < 300
+    ) ON ROWS
+FROM [factconstellation]
+
+//3. Slice with Condition: Platform with Time Spent Between 200 and 700
+SELECT 
+    [Measures].[Time Spent] ON COLUMNS,
+    FILTER(
+        [Dim Platform].[Platform Name].MEMBERS,
+        [Measures].[Time Spent] > 200 AND [Measures].[Time Spent] < 700
+    ) ON ROWS
+FROM [factconstellation]
+
+
+//4. Dice with Condition: Students Aged Greater Than 20 and Time Spent Less Than 600
+
+SELECT 
+    [Measures].[Time Spent] ON COLUMNS,
+    FILTER(
+        CROSSJOIN([Dim Student].[Age].MEMBERS, [Dim Course].[Course Type].MEMBERS),
+        [Dim Student].[Age].CURRENTMEMBER.NAME > "20" AND [Measures].[Time Spent] < 600
+    ) ON ROWS
+FROM [factconstellation]
+
+//5. Pivot with Condition: Features Where Time Spent Is Above 800
+
+SELECT 
+    [Measures].[Time Spent] ON COLUMNS,
+    FILTER([Dim Features].[Feature Description].MEMBERS, [Measures].[Time Spent] > 100) ON ROWS
+FROM [factconstellation]
+
+
+
+

@@ -1,0 +1,41 @@
+//1. Roll-Up -Aggregate student engagement by platform.
+
+SELECT 
+    {[Measures].[Fact Course Engagement Count]} ON COLUMNS, 
+    {[Dim Platform].[Platform Name].Children} ON ROWS 
+FROM [snowflake]
+
+//2. Drill-Down -Drill down from platforms to individual courses.
+
+SELECT 
+    {[Measures].[Fact Course Engagement Count]} ON COLUMNS, 
+    {[Dim Platform].[Platform Name].Children, 
+     [Dim Course].[Course Type].Children} ON ROWS
+FROM [snowflake]
+
+//3. Slice -Filter engagement data for a specific platform (e.g., "Coursera").
+
+SELECT 
+    {[Measures].[Fact Course Engagement Count]} ON COLUMNS 
+FROM [snowflake] 
+WHERE ([Dim Platform].[Platform Name].[Coursera])
+//4. Dice-Select engagement data for both a specific platform and course type.
+
+SELECT 
+    {[Measures].[Fact Course Engagement Count]} ON COLUMNS, 
+    {[Dim Course].[Course Type].Children} ON ROWS
+FROM [snowflake] 
+WHERE ([Dim Platform].[Platform Name].[Udemy], 
+       [Dim Course].[Course Type].[Programming])
+
+//5. Pivot-Show engagement by student age group and platform.
+
+SELECT 
+    {[Dim Student].[Age].Children} ON COLUMNS, 
+    {[Dim Platform].[Platform Name].Children} ON ROWS 
+FROM [snowflake]
+
+
+
+
+

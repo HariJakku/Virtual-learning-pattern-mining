@@ -1,0 +1,29 @@
+//1. Roll-Up :Summarize the data by Course Type:
+SELECT 
+    [Dim Course 1].[Course Type].MEMBERS ON COLUMNS
+FROM [star]
+
+
+//2.Drill down from platforms to individual students:
+SELECT 
+    [Dim Student 1].[Student ID].MEMBERS ON COLUMNS,
+    [Dim Platform 1].[Platform Name].MEMBERS ON ROWS
+FROM [star]
+//3. Slice -View the Platform Name for students with a specific education level (e.g., Undergraduate):
+SELECT 
+    [Dim Platform 1].[Platform Name].MEMBERS ON COLUMNS
+FROM [star]
+WHERE ([Dim Student 1].[Education Level].&[Undergraduate])
+
+//4.Dice-Feature Descriptions by Education Level
+SELECT 
+    [Dim Features 1].[Feature Description].MEMBERS ON COLUMNS,
+    [Dim Student 1].[Education Level].MEMBERS ON ROWS
+FROM [star]
+
+//5.pivot - Student Names by Course Type
+SELECT 
+    [Dim Course 1].[Course Type].MEMBERS ON COLUMNS,
+    [Dim Student 1].[Name].MEMBERS ON ROWS
+FROM [star]
+
