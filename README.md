@@ -104,7 +104,7 @@ Full project documentation is available in the [`/DM_B9.pdf`](./DM_B9.pdf) file.
 
 **1️⃣ Clone the Repository**
 ```bash
-git clone https://github.com/your-username/Data-Mining-Virtual-Learning.git
+git clone https://github.com/HariJakku/Virtual-learning-pattern-mining.git
 ```
 
 **2️⃣ Navigate into the project directory:**
